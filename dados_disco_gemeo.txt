@@ -1,0 +1,22 @@
+Problema a ser solucionado:
+
+Atualmente nas usinas de pelotização, fica apenas um operador (pessoa que opera os discos) por turno. E o problema é que quando um determinado disco esta com problema, ele desliga o controle automático (sistema especialista que controla os discos) de todos os discos pois ele não sabe exatamente qual disco esta com problema e controla manualmente os discos. 
+Obs: o problema pode ser: baixa eficiência do disco, baixa alimentação, sistema de visão computacional pode não estar funcionando da maneira correta etc.
+
+Outro problema é que o operador não gosta/costuma ler os gráficos do trendView que mostra em gráfico de linha variáveis relacionadas a ao disco, como por exemplo: Alimentação, rotação do disco, ângulo do disco, taxa de retorno (quantidade de pelotas estão voltando para a mistura por não estarem com a granulometria correta)
+
+Obs: as telas que eles possuem atualmente (trendViewr e HMI que irei anexar aqui no projeto para você dar uma olhada) são antigas e mostram muitos dados, talvez seja por isso que eles não gostem de utilizar esses gráficos para entender melhor a situação dos discos e acabam tomando decisões erradas/equivocadas
+
+Objetivo do projeto:
+
+Mostrar de forma fácil e intuitiva para os operadores que operam os discos de pelotização, informações relacionadas aos discos de pelotamento.
+
+Deixei aqui no projeto a pasta @pel_gem que contem um modelo digital dos discos e ele deve ser usado como base para as implementações.
+
+A minha ideia é que em cima, do lado ou embaixo (veja qual posição fica melhor) de cada disco tenha as seguintes informações: Eficiência do disco(relação entre a taxa de alimentação do disco e o retorno), Relação (PV), SP (SetPoint), e taxa de alimentação. Tem que ter um alerta de caso a eficiência do disco fique a baixo de 70%,  neste caso pensei em o disco especifico piscar levemente em vermelho. Outro alerta é para caso a relação aumente ou diminua demais (Deve estar entar 0.6 e 0.8). Caso a taxa de alimentação esteja baixa, o seu valor deve aparecer em vermelho. caso ele clique em algum disco (mesmo comportamento de como acontece no modelo digital), ele vera algumas informações especificas alem das informações mostradas no overView da usina, como: Velocidade do disco, Inclinação do disco. E tambem devera ter uma caixinha escrito "ver no gráfico" e quando ele clicasse nela mostraria um garfico de todas essas variaveis no tempo (grafico de linhas). Em relação a este grafico, Deve ser possivel adicionar variaveis a serem vistas no graficos e conseguir retirar variaveis no gráfico.
+
+DADOS: O padrão de comunicação e os dados vem do maestro, e o esquema é basicamente igual o do projeto @html_marcao (json e afins), etão utilize o @html_marcao para ter como base o padrão de comunicação e de dados. Algumas variaveis e talvez as unicas que irão ser utilizadas neste projeto estão na imagem @TrendViewr
+
+Lembre de utilizar a norma ISA para HMI (alertas, verde e vermelho para indicadores etc)
+Lembre de utilizar como base o modelo digital do projeto @pel_gem.
+Crie outra pasta para colocar todo o projeto
